@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.main-layout {
+  padding: 30px 0 80px 0;
+}
