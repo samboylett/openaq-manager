@@ -21,14 +21,18 @@ export async function getServerSideProps({ params }) {
     return {
         props: {
             operation,
+            overview,
         },
     }
 }
 
-export default function OperationPage({ operation }) {
+export default function OperationPage({ operation, overview }) {
     return (
         <Layout>
-            <Operation operation={ operation } />
+            <Operation
+                operation={ operation }
+                overview={ overview }
+            />
         </Layout>
     )
 }

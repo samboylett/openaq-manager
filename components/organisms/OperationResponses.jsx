@@ -3,7 +3,7 @@ import { Table } from 'semantic-ui-react'
 
 import ResponseSchemas from './ResponseSchemas'
 
-export default function OperationResponses({ responses }) {
+export default function OperationResponses({ responses, components }) {
     return (
         <Table>
             <Table.Header>
@@ -36,6 +36,7 @@ export default function OperationResponses({ responses }) {
                         <Table.Cell>
                             <ResponseSchemas
                                 content={ responseInfo.content }
+                                components={ components }
                             />
                         </Table.Cell>
                     </Table.Row>

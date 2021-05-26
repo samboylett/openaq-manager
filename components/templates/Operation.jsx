@@ -4,10 +4,12 @@ import Link from 'next/link'
 
 import OperationResponses from '../organisms/OperationResponses'
 import OperationParameters from '../organisms/OperationParameters'
+import OperationQuery from '../organisms/OperationQuery'
+
 import BasicTable from '../molecules/BasicTable'
 import KeyValueTable from '../molecules/KeyValueTable'
 
-export default function Operation({ operation }) {
+export default function Operation({ operation, overview }) {
     const keyValueInfo = Object.fromEntries(Object.entries(operation.info)
         .filter(([_, value]) => ['string', 'number'].includes(typeof value)))
 
@@ -43,7 +45,18 @@ export default function Operation({ operation }) {
                 Responses
             </Header>
 
-            <OperationResponses responses={ responses } />
+            <OperationResponses
+                responses={ responses }
+                components={ overview.components }
+            />
+
+            <Header as="h2">
+                Send Query
+            </Header>
+
+            <OperationQuery
+                operation={ operation }
+            />
         </React.Fragment>
     )
 }

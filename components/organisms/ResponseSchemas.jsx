@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Accordion, Icon } from 'semantic-ui-react'
-import ReadObject from '../atoms/ReadObject'
+import ReadSchema from '../molecules/ReadSchema'
 
-export default function ResponseSchemas({ content }) {
+export default function ResponseSchemas({ content, components }) {
     const [activeIndex, setActiveIndex] = useState(null);
 
     return (
@@ -22,7 +22,10 @@ export default function ResponseSchemas({ content }) {
                         </Accordion.Title>
 
                         <Accordion.Content active={ active }>
-                            <ReadObject value={ info.schema } />
+                            <ReadSchema
+                                schema={ info.schema }
+                                components={ components }
+                            />
                         </Accordion.Content>
                     </React.Fragment>
                 )
