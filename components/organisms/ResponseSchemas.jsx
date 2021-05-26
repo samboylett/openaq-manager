@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Accordion, Icon } from 'semantic-ui-react'
-import ReadSchema from '../molecules/ReadSchema'
+import ReadSchema from '../atoms/ReadSchema'
 
 export default function ResponseSchemas({ content, components }) {
     const [activeIndex, setActiveIndex] = useState(null);
